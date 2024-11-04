@@ -1,0 +1,171 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  background-color: black;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.logo {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.logo-slide {
+  display: inline-block;
+  animation: 15s slide infinite linear;
+}
+
+.logo-slide img {
+  height: 100px;
+}
+
+section {
+  overflow: hidden;
+  background-image: url(ba.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative; /* For overlay or positioning */
+  min-height: 100vh; /* Ensures the section takes at least full viewport height */
+  background-color: rgba(0, 0, 0, 0.5); /* Fallback color */
+}
+
+.main2 {
+  margin-top: 57px;
+  position: relative;
+  width: 15%;
+  box-shadow: 0 0 25px #0f0529;
+  filter: drop-shadow(0 0 1rem black);
+  border-radius: 20px;
+}
+
+.main {
+  position: absolute;
+  top: 165px;
+  z-index: 999;
+  width: 5%;
+}
+
+section h2,
+h4 {
+  color: white;
+  font-family: "Oswald";
+}
+
+section h2 {
+  margin-top: 20px;
+}
+
+section h4 {
+  font-size: 24px;
+  margin-bottom: 1rem;
+}
+
+section span {
+  position: relative;
+}
+
+section span::before {
+  color: #9e72c3;
+  content: "Siswa";
+  animation: words 20s infinite;
+}
+
+section span::after {
+  content: "";
+  color: #9e72c3;
+  position: absolute;
+  width: 0;
+  height: 100%;
+  border-left: 2px solid #9e72c3;
+  right: -8px;
+  animation: cursor 0.5s infinite;
+}
+
+@keyframes cursor {
+  to {
+    border-left: 2px solid #0f0529;
+  }
+}
+
+@keyframes words {
+  0%,
+  20% {
+    content: "Siswa SMK";
+  }
+  21%,
+  40% {
+    content: "Programmer";
+  }
+  41%,
+  60% {
+    content: "Gamer";
+  }
+  61%,
+  80% {
+    content: "Anak Sija";
+  }
+  81%,
+  100% {
+    content: "Saya Anak 26";
+  }
+}
+
+section button {
+  background-color: #9e72c3;
+  padding: 20px;
+  cursor: pointer;
+  border-radius: 20px;
+  font-family: "Poppins";
+  border: 2px solid #f5e1fd;
+  transition: 0.5s ease;
+}
+
+section button:hover {
+  background-color: white;
+  transform: translateY(-5px);
+}
+
+@media (max-width: 678px) {
+  .main2 {
+    position: relative;
+    width: 39%;
+    box-shadow: 0 0 25px #0f0529;
+    filter: drop-shadow(0 0 1rem black);
+    border-radius: 20px;
+  }
+
+  .main {
+    position: absolute;
+    top: 218px;
+    z-index: 999;
+    width: 15%;
+  }
+
+  section {
+    overflow: hidden;
+    background-image: url(ba.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 50%;
+  }
+}
